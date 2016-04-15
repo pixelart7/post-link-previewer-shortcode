@@ -2,7 +2,7 @@
 /*
 Plugin Name: Post Link Previewer Shortcode
 Description: Show preview and a link to a post using shortcode
-Version:     0.0.1
+Version:     0.0.2
 Author:      Chaiyapat Tantiworachot
 Author URI:  https://pix7.me/
 License:     GPL2
@@ -46,7 +46,7 @@ function post_link_previewer_do( $atts ){
             <div class="post-link-previewer">
                 <?php if( ! $a['blank'] ) { ?>
                 <div class="infos">
-                    <p class="info-text"><?php echo ($a['info'] == 'PRESET')? $info_texts[ $a['to'] ] . "&rarr;": $a['info']; ?></p>
+                    <p class="info-text"><?php echo ($a['info'] == 'PRESET')? $info_texts[ $a['to'] ] . " &rarr;": $a['info']; ?></p>
                 </div>
                 <?php } ?>
                 <div class="link-preview">
