@@ -42,24 +42,26 @@ function post_link_previewer_do( $atts ){
     if($res['hasImage']) $res['thumb'] = wp_get_attachment_url(get_post_thumbnail_id($post->ID));
 
     ?>
-        <a href='<?php echo $res['url']; ?>' class="post-link-previewer-anchor">
-            <div class="post-link-previewer">
-                <?php if( ! $a['blank'] ) { ?>
-                <div class="infos">
-                    <p class="info-text"><?php echo ($a['info'] == 'PRESET')? $info_texts[ $a['to'] ] . " &rarr;": $a['info']; ?></p>
-                </div>
-                <?php } ?>
-                <div class="link-preview">
-                    <?php if($res['hasImage']){ ?><div class="thumb" style="background-image: url('<?php echo $res['thumb']; ?>')"></div><?php } ?>
-                    <div class="content-wrapper">
-                        <div class="content">
-                            <p class="title"><?php echo $res['title'] ?></p>
-                            <p class="post-content"><?php echo $res['content'] ?></p>
+        <div class="post-link-previewer-wrapper">
+            <a href='<?php echo $res['url']; ?>' class="post-link-previewer-anchor">
+                <div class="post-link-previewer">
+                    <?php if( ! $a['blank'] ) { ?>
+                    <div class="infos">
+                        <p class="info-text"><?php echo ($a['info'] == 'PRESET')? $info_texts[ $a['to'] ] . " &rarr;": $a['info']; ?></p>
+                    </div>
+                    <?php } ?>
+                    <div class="link-preview">
+                        <?php if($res['hasImage']){ ?><div class="thumb" style="background-image: url('<?php echo $res['thumb']; ?>')"></div><?php } ?>
+                        <div class="content-wrapper">
+                            <div class="content">
+                                <p class="title"><?php echo $res['title'] ?></p>
+                                <p class="post-content"><?php echo $res['content'] ?></p>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </a>
+            </a>
+        </div>
     <?php
 }
 
