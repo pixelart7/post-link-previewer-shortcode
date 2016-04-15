@@ -9,6 +9,8 @@
 .post-link-previewer-anchor:hover .info-text {
   color: #515151;
   text-decoration: underline; }
+.post-link-previewer-anchor:hover .post-link-previewer {
+  box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.1); }
 
 .post-link-previewer {
   color: #111;
