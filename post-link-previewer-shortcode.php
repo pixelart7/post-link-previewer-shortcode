@@ -34,7 +34,7 @@ function post_link_previewer_do( $atts ){
     if( $post->post_status != 'publish' ) return;
     $res = array(
         'title' => apply_filters( 'the_title', $post->post_title ),
-        'content' => wp_strip_all_tags( strip_shortcodes ( $post->post_content ) ),
+        'content' => substr( wp_strip_all_tags( strip_shortcodes ( $post->post_content ) ), 0, 300 ),
         'hasImage' => has_post_thumbnail( $post->ID ),
         'url' => get_permalink( $post->ID ),
         'thumb' => ''
